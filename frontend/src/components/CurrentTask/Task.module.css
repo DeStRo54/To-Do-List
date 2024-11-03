@@ -1,0 +1,27 @@
+.task-container {
+    display: flex;
+    min-height: 40px;
+    border: 2px solid gray;
+    padding: 5px 6px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    background-color: deepskyblue;
+}
+
+.task-container p {
+    font-size: 18px;
+    margin-left: right;
+    word-break: break-word;
+    margin-right: 10px;
+}
+
+.task-container svg {
+    height: 25px;
+    min-width: 25px;
+    padding: auto;
+    border: 2px solid darkblue;
+    border-radius: 5px;
+    margin-left: auto;
+    background-color: darkblue;
+    color: white;
+}

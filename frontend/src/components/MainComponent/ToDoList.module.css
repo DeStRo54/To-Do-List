@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+
+*, 
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+.header { 
+    max-width: 500px;
+    margin: 20px auto 0px;
+}
+
+.header span {
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    border: 2px solid #0a5d7d;
+    border-radius: 16px;
+    background-color: #0a5d7d;
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.container {
+    margin-top: 25px;
+    border: 2px solid blue;
+    border-radius: 14px;
+    padding: 20px 5px;
+}
+
+.list-form {
+    height: 550px;
+    padding: 0 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.list-form::-webkit-scrollbar {
+    width: 10px;
+}
+
+.list-form::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+.list-form-header {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+     
+}
+
+.list-form-header input {
+    padding-left: 8px;
+    width: 75%;
+    border: 2px solid #2473bc;
+    border-radius: 8px;
+    font-size: large;
+}
+
+.list-form-header button {
+    width: 20%;
+    min-width: 57px;
+    border: 2px solid #2473bc;
+    background-color: #2473bc;
+    color: white;
+    border-radius: 16px;
+    margin-left: 15px;
+    font-size: 22px;
+}
