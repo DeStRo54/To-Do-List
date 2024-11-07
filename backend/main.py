@@ -3,9 +3,9 @@ from pydantic import BaseModel
 import databases
 import sqlalchemy
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 # Настройки базы данных
-DATABASE_URL = "postgresql://postgres:12345@db:5432/To-Do-List"
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgresql://postgres:12345@localhost:5432/To-Do-List")
 database = databases.Database(DATABASE_URL)
 
 metadata = sqlalchemy.MetaData()
