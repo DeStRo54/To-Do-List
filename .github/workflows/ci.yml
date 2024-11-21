@@ -1,20 +1,20 @@
 name: CI Pipeline
 
 on:
-  push:  # Срабатывает при push
+  push:
     branches:
-      - main
-  pull_request:  # Срабатывает на PR в main
+      - master
+  pull_request:
     branches:
-      - main
+      - master
 
 jobs:
-  frontend:  # Job для React.js
+  frontend:
     name: Frontend Build & Test
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code  # Клонирование репозитория
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node.js  # Установка Node.js
@@ -22,17 +22,17 @@ jobs:
         with:
           node-version: 16  # Указываем версию Node.js
 
-      - name: Install dependencies  # Установка зависимостей
+      - name: Install dependencies
         run: |
           cd frontend
           npm install
 
-      - name: Build application  # Сборка React приложения
+      - name: Build application
         run: |
           cd frontend
           npm run build
 
-  backend:  # Job для FastAPI
+  backend:
     name: Backend Lint & Test
     runs-on: ubuntu-latest
 
@@ -45,7 +45,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies  # Установка зависимостей
+      - name: Install dependencies
         run: |
           cd backend
           pip install -r requirements.txt
