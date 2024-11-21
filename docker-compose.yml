@@ -2,20 +2,20 @@ version: '3.8'
 
 services:
   web:
-    build: ./frontend  # Путь к Dockerfile фронтенда
+    build: ./frontend
     ports:
-      - "3000:3000"  # Порт фронтенда
+      - "3000:3000"
     depends_on:
-      - backend # Фронтенд зависит от бэкенда
+      - backend
     environment:
-      - REACT_APP_API_URL=http://localhost:3000  # URL API бэкенда
+      - REACT_APP_API_URL=http://localhost:3000
     networks:
       - app-network
 
   backend:
-    build: ./backend  # Путь к Dockerfile бэкенда
+    build: ./backend 
     ports:
-      - "8000:8000"  # Порт бэкенда
+      - "8000:8000"
     depends_on:
       - db
     environment:
@@ -23,13 +23,13 @@ services:
     networks:
       - app-network
   db:
-    image: postgres:17  # Используйте образ Postgres
+    image: postgres:17
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345
       - POSTGRES_DB=To-Do-List
     volumes:
-      - postgres_data:/var/lib/postgresql/data  # Сохраняем данные базы данных
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - app-network
 
